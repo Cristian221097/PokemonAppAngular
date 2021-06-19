@@ -1,0 +1,24 @@
+<div id="buscador">
+    <input type="text" placeholder="species name" [(ngModel)]="nombre"/>
+    <input (click)="getByName()" type="button" value="Search" />
+    
+</div>
+
+<h1>Especie de Pokemon</h1>
+
+<div id="contenedor" *ngIf="PokemonData">
+
+        <ul>
+            <li id="primer"><span> name:</span> {{PokemonData.name}} </li>
+            <li><span>evolves from species:</span> {{PokemonData.evolves_from_species.name}} </li>
+            <li><span>Shape:</span> {{PokemonData.shape.name}} </li>
+            <li><span>Generation:</span>{{PokemonData.generation.name}} </li>
+            <li><span>Growth Rate:</span>{{PokemonData.growth_rate.name}}</li>
+            <li><span>Color:</span>{{PokemonData.color.name}}</li>
+            <li>{{PokemonData.flavor_text_entries[0].flavor_text}}</li>
+        </ul>    
+        <input type="button" value="Download" (click)="download()"/>
+
+</div>
+
+
